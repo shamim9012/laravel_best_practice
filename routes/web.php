@@ -10,6 +10,7 @@ use App\Http\Middleware\CheckStatus;
 use App\Http\Controllers\GeoLocationController;
 use App\Http\Controllers\PostGuzzleController;
 use App\Http\Controllers\Polymorphic\PostController;
+use App\Http\Controllers\ProvisionServer;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,5 @@ Route::get('posts',[PostGuzzleController::class,'index']);
 Route::get('posts/store', [PostGuzzleController::class, 'store' ]);
 
 Route::get('get-posts', [PostController::class, 'index']);
+
+Route::get('/server', [ProvisionServer::class]);

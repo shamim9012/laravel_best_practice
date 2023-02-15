@@ -51,3 +51,7 @@ Class Abstraction = todo
 
 polymorphic = done
 # https://www.itsolutionstuff.com/post/laravel-one-to-many-polymorphic-relationship-tutorialexample.html
+
+
+csrfToken hide for specific routes
+# see App\Http\Middleware\VerifyCsrfToken
