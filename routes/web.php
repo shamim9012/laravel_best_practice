@@ -29,11 +29,8 @@ Route::middleware([CheckStatus::class])->group(function(){
         return view('welcome');
     });
 
-    Route::prefix('book')->group(function () {
-        Route::get('/list', [BookController::class, 'index'])->name('list');
-        Route::post('/store', [BookController::class, 'store'])->name('store');
-    });
-
+    Route::get('/books', [BookController::class, 'index'])->name('books');
+    Route::post('/book-store', [BookController::class, 'store'])->name('book-store');
     Route::get('/db-backup', [DBController::class, 'databaseBackup']);
     Route::get('/user', [UsersController::class, 'findUser']);
 
