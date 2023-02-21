@@ -39,6 +39,7 @@ Route::middleware([CheckStatus::class])->group(function(){
         Route::get('/user', [UsersController::class, 'findUser']);
     });
 
+    // find user using custom service
     Route::prefix('user')->group(function () {
         Route::get('/find-user', [UsersController::class, 'findUser']);
     });
@@ -72,8 +73,8 @@ Route::middleware([CheckStatus::class])->group(function(){
         Route::get('get-address-from-ip', [GeoLocationController::class, 'index']);
     });
 
-    // server localion
-    Route::prefix('server')->group(function () {
+    // invoke functon's route
+    Route::prefix('invoke')->group(function () {
         Route::get('/info', [ProvisionServer::class]);
     });
 
