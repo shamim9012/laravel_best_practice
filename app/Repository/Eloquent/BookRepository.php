@@ -24,9 +24,7 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     */
     public function all(): Collection
     {
-        $order = Book::find(1);
-        return $order->author_id;
-    //    return $this->model->all();
+       return $this->model->all();
     }
 
     /**
