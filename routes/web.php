@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DBController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Book\BookController;
+use App\Http\Controllers\Author\AuthorController;
 use Illuminate\Support\Facades\Redis;
 use App\Http\Middleware\CheckStatus;
 
@@ -29,9 +30,16 @@ Route::get('/', function () {
 
 Route::middleware([CheckStatus::class])->group(function(){
 
+    // repo pattern
     Route::prefix('book')->group(function () {
         Route::get('/books', [BookController::class, 'index'])->name('books');
         Route::post('/book-store', [BookController::class, 'store'])->name('book-store');
+    });
+
+    // resource request patter
+    Route::prefix('author')->group(function () {
+        Route::get('/list', [AuthorController::class, 'index'])->name('list');
+        Route::post('/store', [AuthorController::class, 'store'])->name('store');
     });
 
     Route::prefix('db')->group(function () {
