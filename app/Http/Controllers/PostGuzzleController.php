@@ -13,7 +13,7 @@ class PostGuzzleController extends Controller
    
         $jsonData = $response->json();
          
-        dd($jsonData);
+        return $jsonData;
     }
  
     public function store()
@@ -23,6 +23,6 @@ class PostGuzzleController extends Controller
                     'body' => 'This is test from tutsmake.com as body',
                 ]);
    
-        dd($response->successful());
+        return $response->successful();
     }
 }

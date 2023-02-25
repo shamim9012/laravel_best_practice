@@ -16,6 +16,8 @@ class CheckStatus
      */
     public function handle(Request $request, Closure $next)
     {
+        // middleware logic here....
+
         // if (auth()->user()->status == 'active') {
         //     return $next($request);
         // }

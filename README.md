@@ -55,3 +55,6 @@ polymorphic = done
 
 csrfToken hide for specific routes
 # see App\Http\Middleware\VerifyCsrfToken
+
+
+composer update --ignore-platform-reqs
