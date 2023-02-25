@@ -101,6 +101,12 @@ Route::middleware([CheckStatus::class])->group(function(){
         Route::get('methods', [CollectionController::class, 'collectionMethods']);
     });
 
+    /**
+    * Custom validation routes
+    */
+    Route::get('/custom-validation', 'CustomValidationController@show');
+    Route::post('/custom-validation', 'CustomValidationController@perform')->name('custom-validation');
+
 });
 
 
