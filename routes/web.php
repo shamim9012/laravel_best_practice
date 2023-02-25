@@ -12,6 +12,7 @@ use App\Http\Controllers\GeoLocationController;
 use App\Http\Controllers\PostGuzzleController;
 use App\Http\Controllers\Polymorphic\PostController;
 use App\Http\Controllers\ProvisionServer;
+use App\Http\Controllers\CollectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,6 +89,16 @@ Route::middleware([CheckStatus::class])->group(function(){
 
     Route::prefix('test')->group(function () {
         Route::get('get-posts', [PostController::class, 'index']);
+    });
+
+    // collection route
+    Route::prefix('collection')->group(function () {
+        Route::get('official-collection-example', [CollectionController::class, 'officialCollectionExample']);
+
+        Route::get('class', [CollectionController::class, 'collectionClass']);
+        
+        Route::get('method', [CollectionController::class, 'collectMethod']);
+        Route::get('methods', [CollectionController::class, 'collectionMethods']);
     });
 
 });

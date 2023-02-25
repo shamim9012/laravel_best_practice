@@ -62,6 +62,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapApiRoutes();
 
+        $this->mapOOPRoutes();
+
 
         $this->mapWebRoutes();
 
@@ -99,6 +101,22 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
     }
+
+    /**
+     * Define the "oop" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapOOPRoutes()
+    {
+        Route::prefix('oop')
+             // ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/oop.php'));
+    }
+
 
 
     /**
