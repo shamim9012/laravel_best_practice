@@ -26,7 +26,8 @@ use App\Http\Controllers\ProvisionServer;
 Route::middleware([CheckStatus::class])->group(function(){
 
     Route::get('/', function () {
-        return view('welcome');
+        return "this is ok";
+        // return view('welcome');
     });
 
     Route::get('/books', [BookController::class, 'index'])->name('books');
