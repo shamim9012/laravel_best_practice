@@ -51,6 +51,22 @@ class CollectionController extends Controller
 
         // return collect($this->collection_array)->avg();
 
-        return collect($this->collection_array)->chunk(4)->all();
+        // return collect($this->collection_array)->chunk(4)->all();
+
+
+
+
+        // $collection = collect($this->collection_array);
+ 
+        // $multiplied = $collection->map(function ($item) {
+        //     return $item * 2;
+        // });
+         
+        // return $multiplied->all();         
+
+
+
+        
+
     }
 }
