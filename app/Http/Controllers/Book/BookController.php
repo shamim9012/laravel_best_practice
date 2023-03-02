@@ -18,17 +18,24 @@ class BookController extends Controller
     public $bookRepoInterface;
 
     public function __construct(BookRepositoryInterface $bookRepoInterface)
-    {        
+    {
         $this->bookRepoInterface = $bookRepoInterface;
     }
 
     public function index()
     {
+        // $data = Book::with('author');
+
+        // return response([
+        //     'success' => true,
+        //     'message' => 'Task Heading list',
+        //     'data' => $data
+        // ]);
 
         $books = $this->bookRepoInterface->all();
 
-        Log::info($books);
-        
+        // Log::info($books);
+
         return $books;
         // return view('book', ['books' => $book]);
     }
@@ -67,7 +74,7 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $book->update($request->all());
-        
+
         return $book;
     }
 
