@@ -24,17 +24,17 @@ class BookController extends Controller
 
     public function index()
     {
-        $data = Book::with('author');
+        // $data = Book::with('author');
 
-        return response([
-            'success' => true,
-            'message' => 'Task Heading list',
-            'data' => $data
-        ]);
+        // return response([
+        //     'success' => true,
+        //     'message' => 'Task Heading list',
+        //     'data' => $data
+        // ]);
 
         $books = $this->bookRepoInterface->all();
 
-        Log::info($books);
+        // Log::info($books);
 
         return $books;
         // return view('book', ['books' => $book]);
