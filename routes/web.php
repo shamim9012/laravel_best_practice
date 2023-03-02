@@ -33,7 +33,7 @@ Route::middleware([CheckStatus::class])->group(function(){
 
     // repo pattern
     Route::prefix('book')->group(function () {
-        Route::get('/books', [BookController::class, 'index'])->name('books');
+        Route::get('/list', [BookController::class, 'index'])->name('list');
         Route::post('/book-store', [BookController::class, 'store'])->name('book-store');
     });
 

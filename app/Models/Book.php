@@ -20,9 +20,10 @@ class Book extends Model
     return $this->belongsTo(Author::class);
   }
 
-  public function getAuthorIdAttribute($value)
-  {
-      return "author_id_" . $value;
-  }
+  // prefix column value
+  // public function getAuthorIdAttribute($value)
+  // {
+  //     return "author_id_" . $value;
+  // }
 
 }
