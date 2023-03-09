@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class DBController extends Controller
 {
+    /*
+    db backup
+    */
     public function databaseBackup()
     {
         $this->removePreviousFiles();
