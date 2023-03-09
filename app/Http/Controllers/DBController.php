@@ -50,4 +50,8 @@ class DBController extends Controller
             }
         }
     }
+
+    private function test () {
+        return 5 + 6;
+    }
 }
